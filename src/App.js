@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import LazyLoad from 'react-lazyload';
+import { JsonToExcel } from "react-json-to-excel";
+const App = () => {
 
-function App() {
+  const samplejson1 = [
+    { label: "C" },
+    { label: "Java" },
+    { label: "Go" },
+    { label: "Javascript" },
+    { label: "HTML" },
+    { label: "CSS" },
+    { label: "REACT" },
+    { label: "JQUERY" }
+  ];
+  
+  const samplejson2 = [
+    { name: "name01" , age:"20",sex:"M" },
+    { name: "name02" , age:"22",sex:"F" },
+    { name: "name03" , age:"20",sex:"M" }
+  ];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <JsonToExcel
+        title="Download as Excel"
+        data={samplejson1}
+        fileName="sample-file"
+      />
+       <JsonToExcel
+        title="Download as Excel"
+        data={samplejson2}
+        fileName="sample-file"
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
