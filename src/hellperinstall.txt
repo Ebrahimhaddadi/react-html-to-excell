@@ -1,0 +1,9 @@
+1.install dependencie from https://www.npmjs.com/package/react-json-to-excel
+2. app script to html in public folder <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+3.use component jsontoexcel <JsonToExcel
+        title="Download as Excel"
+        data={[{ test: "test" }]}
+        fileName="sample-file"
+        btnClassName="custom-classname"
+      />
+4.data json convart to excel file can download file 
